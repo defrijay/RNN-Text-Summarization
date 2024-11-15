@@ -1,6 +1,6 @@
-# Text Summarization using LSTM
+# Text Summarization using Simple RNN
 
-Proyek ini mengimplementasikan model _Long Short-Term Memory_ (LSTM) untuk menghasilkan ringkasan teks dari artikel berita. Model ini menggunakan teknik prapemrosesan data, augmentasi teks, serta pembelajaran mendalam untuk merangkum teks secara otomatis.
+Proyek ini mengimplementasikan model _Reccurent Neural Network_ (RNN) untuk menghasilkan ringkasan teks dari artikel berita. Model ini memanfaatkan teknik prapemrosesan data, augmentasi teks, serta pembelajaran mendalam untuk merangkum teks secara otomatis.
 
 ## Table of Contents
 
@@ -9,24 +9,27 @@ Proyek ini mengimplementasikan model _Long Short-Term Memory_ (LSTM) untuk mengh
 - [Dataset](#dataset)
 - [Installation](#installation)
 - [Project Creator](#project-creator)
+<!-- - [Model Architecture](#model-architecture)
+- [Training the Model](#training-the-model)
+- [Generating Summaries](#generating-summaries)
+- [Results and Visualization](#results-and-visualization) -->
 
 ## Overview
 
-Ringkasan teks otomatis (text summarization) adalah teknik Natural Language Processing (NLP) untuk membuat versi pendek dari suatu teks sambil mempertahankan makna utamanya. Proyek ini menggunakan model **LSTM** untuk menghasilkan ringkasan dari artikel berita berbahasa Indonesia.
+Ringkasan teks otomatis (text summarization) adalah teknik Natural Language Processing (NLP) untuk membuat versi pendek dari suatu teks sambil mempertahankan makna utamanya. Proyek ini menggunakan **Simple RNN** untuk menghasilkan ringkasan dari artikel berita.
 
 ## Features
 
-- **Data Preprocessing**: Membersihkan dan mengonversi teks menjadi sequences, serta padding untuk menyamakan panjang data input.
-- **Text Augmentation**: Menggunakan _synonym replacement_ dan _back-translation_ untuk memperluas variasi data.
-- **LSTM Model Architecture**: Model LSTM dengan beberapa layer untuk menangkap pola urutan teks dalam menghasilkan ringkasan.
+- **Data Preprocessing**: Membersihkan dan mengonversi teks menjadi sequences, kemudian padding untuk membuat panjang yang konsisten.
+- **Model Simple RNN**: Model neural network sederhana yang terdiri dari layer embedding dan RNN.
 - **Training and Evaluation**: Melatih model dengan visualisasi Loss dan Accuracy.
 - **Prediction Function**: Menghasilkan ringkasan otomatis dari input teks pengguna.
 
-## Dataset
+# Dataset
 
-Dataset **Liputan6** adalah kumpulan data berskala besar yang berisi pasangan dokumen dan ringkasan artikel berita dalam Bahasa Indonesia. Dataset ini dirancang untuk mendukung model summarization, baik dalam bentuk ekstraktif maupun abstraktif.
+Dataset **Liputan6** adalah kumpulan data berskala besar yang berisi pasangan dokumen dan ringkasan artikel berita dalam Bahasa Indonesia. Dataset ini dirancang untuk mendukung model summarization baik dalam bentuk ekstraktif maupun abstraktif.
 
-### Liputan6: Large-scale Indonesian Dataset for Text Summarization 
+## Liputan6: Large-scale Indonesian Dataset for Text Summarization 
 
 Dataset ini dikembangkan oleh Fajri Koto et al. (2020) dan berisi lebih dari **215,827 pasangan dokumen-ringkasan** yang diperoleh dari portal berita **Liputan6**.
 
@@ -34,7 +37,7 @@ Dataset ini dikembangkan oleh Fajri Koto et al. (2020) dan berisi lebih dari **2
 
 - **Jenis Ringkasan**: Ekstraktif dan Abstraktif
 - **Bahasa**: Indonesia
-- **Ukuran Dataset**: 16.5 MB
+- **Ukuran Dataset**: 16.5 MB (17,354,387 bytes)
 - **Tugas yang Didukung**: Text summarization, khususnya untuk artikel berita dalam Bahasa Indonesia
 - **Referensi**: [arxiv:2011.00679](https://arxiv.org/abs/2011.00679)
 
@@ -59,14 +62,12 @@ Contoh data:
 ```
 
 
-
-
 ## Installation
 
 Untuk menjalankan proyek ini, Anda memerlukan beberapa pustaka Python. Jalankan perintah di bawah ini untuk menginstalnya:
 
 ```bash
-pip install numpy pandas tensorflow nltk rouge-score googletrans==4.0.0-rc1
+pip install numpy pandas tensorflow nltk rouge-score
 ```
 
 
